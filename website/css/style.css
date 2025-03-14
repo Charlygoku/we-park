@@ -133,50 +133,6 @@ CSS para desktop
 
         }
     }
-    /*load
-    ------
-    ------*/
-    #loadDiv {
-        & > img {
-            align-items: center;
-            width: 20%;
-            height: auto;
-            margin: 10% 40% 0 40%;
-        }
-        & > h3 {
-            color: #FFFFFF;
-            text-align: center;
-            font-size: 2.5vw;
-            font-weight: 900;
-            margin-bottom: -1%;
-        }
-        & > h4 {
-            color: #FFFFFF;
-            text-align: center;
-            font-size: 2vw;
-            margin: 2% 30% 0% 30%;
-            font-weight: 100;
-        }
-        & > .load_box {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            display: flex;
-            justify-content: space-between; 
-            align-items: center; 
-            width: 15%; 
-            padding: 10px;
-            & > img {
-                width: 75%;
-                height: auto;
-            }
-            & > h4 {
-                color: #FFFFFF;
-                font-size: 1.5vw;
-                padding-left: 12.5%;
-            }
-        }
-    } 
     /*menu configuracion
     --------------------
     --------------------*/
@@ -192,6 +148,35 @@ CSS para desktop
             border: 0.2vw #6e6e6e8f solid;
             box-shadow: -1vh 1vh 2.5vh rgba(0, 0, 0, 0.479);
         }
+    /*menu mediana de opciones*/
+    .submenu-wrapper {
+        width: 45%;
+        height: 35%;
+        position: absolute;
+        z-index: 1000;
+        background-color: #FFFFFF;
+        margin: 20% 28% 0% 28%;
+        border-radius: 2vw;
+        border: 0.2vw #6e6e6e8f solid;
+        box-shadow: -1vh 1vh 2.5vh rgba(0, 0, 0, 0.479);
+
+        & > .tank_bug {
+            margin: 0 5% 0 5%;
+            width: 90%;
+            height: 100%;
+
+            & > h3 {
+                font-size: 2.25vw;
+                text-align: center;
+                margin: 2% 0% 1% 0% ;
+            }
+            & > p {
+                font-size: 1.5vw;
+                text-align: center;  
+                margin: 0% 2.5% 0% 2.5% ;
+            }
+        }
+    }
     /*menu pequeño de opciones*/
         .menu_item{
             width: 55%;
@@ -355,6 +340,98 @@ CSS para desktop
                     }
                 }
             }
+        /*bug*/   
+        .bug {
+            height: 90%;
+            width: 100%;
+            & > h2 {
+                margin: 5% 10% 0% 10%;
+                font-size: 2.25vw; 
+            }
+            & > #closebug{
+                position: absolute;
+                top: 2.5%;
+                right: 1.5%;
+                width: 5vh;
+                height: 5vh;
+                border-radius: 100vw;
+                background-color: transparent;
+                color: #FFFFFF;
+                font-size: 1.75vw;
+                font-weight: bolder;
+                align-items: center;
+                border: 1px transparent solid;
+
+                &:hover {
+                    background-color: #6e6e6e27;
+                }
+
+                & > img {
+                    width: 60%;
+                    height: 60%;
+                }
+            }
+            & > form {
+                margin: 0% 10% 0% 10%;
+                width: 80%;
+                height: 90%;
+                overflow-y: scroll;
+                & > label {
+                    margin-top: 2%;
+                    padding: 0%;
+                    font-size: 1.75vw;
+                }
+                & > input {
+                    width: 90%;
+                    height: 7%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    font-size: 1.5vw;  
+                }
+                & > textarea {
+                    width: 90%;
+                    height: 35%;
+                    resize: none;
+                    font-size: 1.75vw;
+                }
+                & > select {
+                    width: 91%;
+                    height: 8%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    font-size: 1.5vw;   
+                }
+                & > #savebug {
+                    width: 91.25%;
+                    height: 9%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    background-color: #72A53E;
+                    color: #FFFFFF;
+                    font-size: 1.75vw;
+                    font-weight: bolder;
+                    margin-bottom: 3%;
+
+                    &:hover {
+                        background-color: #507B24;
+                    }
+                }
+                & > #clearebug {
+                    width: 91.25%;
+                    height: 9%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    background-color: #3E85BF;
+                    color: #FFFFFF;
+                    font-size: 1.75vw;
+                    font-weight: bolder;
+                    
+                    &:hover {
+                        background-color: #25406B;
+                    }
+                }
+            }
+        }    
         
     /*menu_lateral
     --------------
@@ -679,52 +756,36 @@ CSS para tablet
             }
 
         }
+    }   
+    /*menu mediana de opciones*/
+    .submenu-wrapper {
+        width: 61.5%;
+        height: 20%;
+        position: absolute;
+        z-index: 1000;
+        background-color: #FFFFFF;
+        margin: 50% 20% 0% 20%;
+        border-radius: 2vw;
+        border: 0.2vw #6e6e6e8f solid;
+        box-shadow: -1vh 1vh 2.5vh rgba(0, 0, 0, 0.479);
+
+        & > .tank_bug {
+            margin: 0 5% 0 5%;
+            width: 90%;
+            height: 100%;
+
+            & > h3 {
+                font-size: 2.5vw;
+                text-align: center;
+                margin: 2% 0% 1% 0% ;
+            }
+            & > p {
+                font-size: 1.75vw; 
+                text-align: center;  
+                margin: 0% 2.5% 0% 2.5% ;
+            }
+        }
     }
-    /*load
-    ------
-    ------*/
-    #loadDiv{
-        & > img {
-            align-items: center;
-            width: 20%;
-            height: auto;
-            margin: 45% 40% 0 40%;
-        }
-        & > h3 {
-            color: #FFFFFF;
-            text-align: center;
-            font-size: 2.5vw;
-            font-weight: 900;
-            margin-bottom: -1%;
-        }
-        & > h4 {
-            color: #FFFFFF;
-            text-align: center;
-            font-size: 2vw;
-            margin: 1% 20% 0% 20%;
-            font-weight: 100;
-        }
-        & > .load_box {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            display: flex;
-            justify-content: space-between; 
-            align-items: center; 
-            width: 20%; 
-            padding: 10px;
-            & > img {
-                width: 100%;
-                height: auto;
-            }
-            & > h4 {
-                color: #FFFFFF;
-                font-size: 2.2vw;
-                padding-left: 12.5%;
-            }
-        }
-    } 
-        
     /*menu configuracion
     --------------------
     --------------------*/
@@ -903,6 +964,98 @@ CSS para tablet
                     }
                 }
             }
+        /*bug*/   
+        .bug {
+            height: 90%;
+            width: 100%;
+            & > h2 {
+                margin: 5% 10% 0% 10%;
+                font-size: 2.25vw; 
+            }
+            & > #closebug{
+                position: absolute;
+                top: 2.5%;
+                right: 1.5%;
+                width: 4vh;
+                height: 4vh;
+                border-radius: 100vw;
+                background-color: transparent;
+                color: #FFFFFF;
+                font-size: 1.75vw;
+                font-weight: bolder;
+                align-items: center;
+                border: 1px transparent solid;
+
+                &:hover {
+                    background-color: #6e6e6e27;
+                }
+                
+                & > img {
+                    width: 60%;
+                    height: 60%;
+                }
+            }
+            & > form {
+                margin: 0% 10% 0% 10%;
+                width: 80%;
+                height: 90%;
+                overflow-y: scroll;
+                & > label {
+                    margin-top: 2%;
+                    padding: 0%;
+                    font-size: 1.75vw;
+                }
+                & > input {
+                    width: 90%;
+                    height: 7%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    font-size: 1.5vw;
+                }
+                & > textarea {
+                    width: 90%;
+                    height: 35%;
+                    resize: none;
+                    font-size: 1.75vw;
+                }
+                & > select {
+                    width: 91%;
+                    height: 8%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    font-size: 1.5vw; 
+                }
+                & > #savebug {
+                    width: 91.25%;
+                    height: 9%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    background-color: #72A53E;
+                    color: #FFFFFF;
+                    font-size: 2.5vw;
+                    font-weight: bolder;
+                    margin-bottom: 3%;
+
+                    &:hover {
+                        background-color: #507B24;
+                    }
+                }
+                & > #clearebug {
+                    width: 91.25%;
+                    height: 9%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    background-color: #3E85BF;
+                    color: #FFFFFF;
+                    font-size: 2.5vw;
+                    font-weight: bolder;
+
+                    &:hover {
+                        background-color: #25406B;
+                    }
+                }
+            }
+        }    
     /*menu_lateral
     --------------
     --------------*/
@@ -1227,51 +1380,6 @@ CSS para movil
 
         }
     }
-    /*load
-    ------
-    ------*/
-    #loadDiv {
-        & > img {
-            align-items: center;
-            width: 30%;
-            height: auto;
-            margin: 55% 35% 0 35%;
-        }
-        & > h3 {
-            color: #FFFFFF;
-            text-align: center;
-            font-size: 3vw;
-            font-weight: 900;
-            margin-bottom: 0%;
-            padding: 0;
-        }
-        & > h4 {
-            color: #FFFFFF;
-            text-align: center;
-            font-size: 2.5vw;
-            margin: -1% 15% 0% 15%;
-            font-weight: 100;
-        }
-        & > .load_box {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            display: flex;
-            justify-content: space-between; 
-            align-items: center; 
-            width: 20%; 
-            padding: 10px;
-            & > img {
-                width: 100%;
-                height: auto;
-            }
-            & > h4 {
-                color: #FFFFFF;
-                font-size: 2.2vw;
-                padding-left: 12.5%;
-            }
-        }
-    } 
     
     /*menu configuracion
     --------------------
@@ -1287,6 +1395,64 @@ CSS para movil
             border-radius: 4vw;
             border: 0.2vw #6e6e6e8f solid;
             box-shadow: -1vh 1vh 2.5vh rgba(0, 0, 0, 0.479);
+        }
+    /*menu mediana de opciones*/
+        .submenu-wrapper {
+            width: 75%;
+            height: 20%;
+            position: absolute;
+            z-index: 1000;
+            background-color: #FFFFFF;
+            margin: 65% 0% 0% 12.5%;
+            border-radius: 2vw;
+            border: 0.2vw #6e6e6e8f solid;
+            box-shadow: -1vh 1vh 2.5vh rgba(0, 0, 0, 0.479);
+
+            & > .tank_bug {
+                margin: 0 5% 0 5%;
+                width: 90%;
+                height: 100%;
+
+                & > h3 {
+                    font-size: 3.5vw;
+                    text-align: center;
+                    margin: 2% 0% 1% 0% ;
+                }
+                & > p {
+                    font-size: 2.25vw; 
+                    text-align: center;  
+                    margin: 0% 2.5% 0% 2.5% ;
+                }
+            }
+        }
+    /*menu mediana de opciones*/
+        .submenu-wrapper {
+            width: 75%;
+            height: 20%;
+            position: absolute;
+            z-index: 1000;
+            background-color: #FFFFFF;
+            margin: 65% 0% 0% 12.5%;
+            border-radius: 2vw;
+            border: 0.2vw #6e6e6e8f solid;
+            box-shadow: -1vh 1vh 2.5vh rgba(0, 0, 0, 0.479);
+
+            & > .tank_bug {
+                margin: 0 5% 0 5%;
+                width: 90%;
+                height: 100%;
+
+                & > h3 {
+                    font-size: 3.5vw;
+                    text-align: center;
+                    margin: 2% 0% 1% 0% ;
+                }
+                & > p {
+                    font-size: 2.25vw; 
+                    text-align: center;  
+                    margin: 0% 2.5% 0% 2.5% ;
+                }
+            }
         }
     /*menu pequeño de opciones*/
         .menu_item{
@@ -1452,6 +1618,98 @@ CSS para movil
                     }
                 }
             }
+        /*bug*/   
+            .bug {
+                height: 90%;
+                width: 100%;
+                & > h2 {
+                    margin: 5% 10% 0% 10%;
+                    font-size: 3.5vw; 
+                }
+                & > #closebug{
+                    position: absolute;
+                    top: 2.5%;
+                    right: 1.5%;
+                    width: 4vh;
+                    height: 4vh;
+                    border-radius: 100vw;
+                    background-color: transparent;
+                    color: #FFFFFF;
+                    font-size: 1.75vw;
+                    font-weight: bolder;
+                    align-items: center;
+                    border: 1px transparent solid;
+
+                    &:hover {
+                        background-color: #6e6e6e27;
+                    }
+                
+                    & > img {
+                        width: 60%;
+                        height: 60%;
+                    }
+                }
+                & > form {
+                    margin: 0% 10% 0% 10%;
+                    width: 80%;
+                    height: 90%;
+                    overflow-y: scroll;
+                    & > label {
+                        margin-top: 2%;
+                        padding: 0%;
+                        font-size: 3vw;
+                    }
+                    & > input {
+                        width: 90%;
+                        height: 5.5%;
+                        border-radius: 1vw;
+                        border: 0.2vw #6e6e6e8f solid;
+                        font-size: 3vw; 
+                    }
+                    & > textarea {
+                        width: 90%;
+                        height: 35%;
+                        resize: none;
+                        font-size: 3vw;
+                    }
+                    & > select {
+                        width: 91%;
+                        height: 8%;
+                        border-radius: 1vw;
+                        border: 0.2vw #6e6e6e8f solid;
+                        font-size: 3vw;  
+                    }
+                    & > #savebug {
+                        width: 91.25%;
+                        height: 9%;
+                        border-radius: 1vw;
+                        border: 0.2vw #6e6e6e8f solid;
+                        background-color: #72A53E;
+                        color: #FFFFFF;
+                        font-size: 3vw;
+                        font-weight: bolder;
+                        margin-bottom: 3%;
+
+                        &:hover {
+                            background-color: #507B24;
+                        }
+                    }
+                    & > #clearebug {
+                        width: 91.25%;
+                        height: 9%;
+                        border-radius: 1vw;
+                        border: 0.2vw #6e6e6e8f solid;
+                        background-color: #3E85BF;
+                        color: #FFFFFF;
+                        font-size: 3vw;
+                        font-weight: bolder;
+
+                        &:hover {
+                            background-color: #25406B;
+                        }
+                    }
+                }
+            }    
     /*menu_lateral
     --------------
     --------------*/
