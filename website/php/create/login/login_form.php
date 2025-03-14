@@ -12,9 +12,11 @@ if (isset($_SESSION['username'])) {
     echo '
     <form class="loginForm" method="POST">
         <h2>Inicio de Sesión</h2>
-        <br>
-        <label for="username">Nombre de Usuario o Correo Electronico:</label><br>
+        <label for="username">Nombre de Usuario</label><br>
         <input type="text" id="username" name="username" required><br>
+
+        <label for="email">Correo Electronico:</label><br>
+        <input type="text" id="email" name="email" required><br>
 
         <label for="password">Contraseña:</label><br>
         <input type="password" id="password" name="password" required><br><br>
@@ -24,8 +26,7 @@ if (isset($_SESSION['username'])) {
         <p>¿Aun no tienes cuenta? <a href="" id="Create_a"> Create una cuenta ahora</a>
         </p>
         
-        <p>¿Has olvidado la contraseña? <a href=""> Da clic aqui para recuperar la contraseña</a>
-        </p>
+        
 
     </form>';
 }
