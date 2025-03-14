@@ -208,6 +208,8 @@ if (warningButton) {
                                         if (data.success) {
                                             removeClass()
                                             warningCount = true; 
+                                            // quitar estilos de botones activos
+                                            ButtonOff();
                                         }
                                     })
                                     .catch(error => {
@@ -295,6 +297,8 @@ if (warningButton) {
                                     .then(response => response.json())
                                     .then(result => {
                                         if (result.success) {
+                                            // quitar estilos de botones activos
+                                            ButtonOff();
                                         } else {
                                             alert('Error: ' + result.message);
                                         }
