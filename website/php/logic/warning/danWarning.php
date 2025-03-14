@@ -39,15 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Sanear los datos para prevenir inyecciones SQL
-    $tipo_via = $conn->real_escape_string(trim($tipo_via));
-    $nombre_via = $conn->real_escape_string(trim($nombre_via));
-    $poblacion = $conn->real_escape_string(trim($poblacion));
-    $provincia = $conn->real_escape_string(trim($provincia));
-    $comunidad = $conn->real_escape_string(trim($comunidad));
-    $pais = $conn->real_escape_string(trim($pais));
-    $NumPlazasModif = $conn->real_escape_string(trim($NumPlazasModif));
-
     // Sentencia preparada para evitar inyección SQL
     $stmt_InsertIncidents = $conn->prepare('INSERT INTO incidents (tipo_via, nombre_via, poblacion, provincia, comunidad, pais, NumPlazasModif) VALUES (?, ?, ?, ?, ?, ?, ?)');
     if ($stmt_InsertIncidents === false) {
