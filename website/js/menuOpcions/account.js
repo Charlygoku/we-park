@@ -72,6 +72,8 @@ let ControlParkCount = true;
 button_lat.addEventListener('click', () => {
     removeClass();
     controlTrue();
+    ButtonOff();
+
 });
 
 // Mi cuenta
