@@ -85,6 +85,8 @@ if (bugButton) {
                     removeClass();
                     bugCount = true;
                     BugObserver.disconnect();
+                    // quitar estilos de botones activos
+                    ButtonOff();
                 });
                 }
                 BugObserver.disconnect();
