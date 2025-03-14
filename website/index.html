@@ -6,14 +6,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <title>We Park</title>
-    <link rel="icon" type="image/svg+xml" href="./img/favoricon.svg">
+  	<link rel="icon" type="image/svg+xml" href="./img/favoricon.svg">
     <!--Poppins-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <!-- estilos globales -->
     <link rel="stylesheet" href="./css/style.css">
     
     <!--login-->
-    <script src="./js/loading.js" defer></script> 
+        <script src="./js/login.js" defer></script> 
     <!-- mapa -->
         <link rel="stylesheet" href="./Leaflet/leaflet.css">
         <script src="./Leaflet/leaflet.js" defer></script>
@@ -22,21 +22,33 @@
     <!-- menu lateral -->
         <script src="./js/menu_lateral.js" defer></script>
     <!-- menu de opciones-->
-    <script src="./js/menuOpcions/account.js" defer></script>
-    <script src="./js/menuOpcions/bug.js" defer></script>
-    <script src="./js/menuOpcions/info.js" defer></script>
+        <script src="./js/menuOpcions/account.js" defer></script>
+        <script src="./js/menuOpcions/warning.js" defer></script>
+        <script src="./js/menuOpcions/bug.js" defer></script>
+        <script src="./js/menuOpcions/info.js" defer></script>
+
+    
+    
+
+    <style>
+
+    </style>
 </head>
 <body>
+
     <!--LOGIN-->
-    <div id="formulario-login"></div>
+        <div id="formulario-login"></div>
     <!-- menu-->
         <div id="menu_opcion"></div>
         
     <!-- mapa -->
         <div id="map" class="mapa"></div>
-    <!-- lateral -->
-    <button id="bot_men_lat"></button>
-    
+
+    <!-- boton lateral -->
+        <button id="bot_men_lat" class="button_lat">
+            <img src="./img/menu_off.svg" alt="Menu" id="img_men_lat">
+        </button>
+
     <!-- menu lateral -->
     <div id="men_lat">
         <p>Buscar parking</p>
@@ -87,27 +99,35 @@
             <button type="submit">Buscar</button>
         </form>  
     </div>
+
     <!-- menu_abajo -->
         <div class="menu_abajo">
             <div>
                 <div class="borde">
-                    <img src="./img/Account.svg" alt="Mi cuenta">
-                    <p>Mi cuenta</p>
+                    <button id="account" class="primero">
+                        <img src="./img/Account.svg" alt="Mi cuenta">
+                        <p>Mi cuenta</p>
+                    </button>
                 </div>
                 <div class="borde">
-                    <img src="./img/Warning.svg" alt="Mis avisos">
-                    <p>Mis avisos</p>
+                    <button id="warning" class="mg_lad">
+                        <img src="./img/Car.svg" alt="Mis avisos">
+                        <p>Mis Sitios</p>
+                    </button>
                 </div>
                 <div class="borde">
-                    <img src="./img/Bug.svg" alt="Reporte">
-                    <p>Reporte</p>
+                    <button id="bug" class="mg_lad">
+                        <img src="./img/Bug.svg" alt="Reporte">
+                        <p>Reporte</p>
+                    </button>
                 </div>
                 <div>
-                    <img src="./img/Search.svg" alt="Acerca de">
-                    <p>Acerca de</p>
+                    <button id="info" class="ultimo">
+                        <img src="./img/Search.svg" alt="Acerca de">
+                        <p>Acerca de</p>
+                    </button>
                 </div>
-
-
             </div>
         </div>
+
 </body>
