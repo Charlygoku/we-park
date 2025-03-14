@@ -133,6 +133,50 @@ CSS para desktop
 
         }
     }
+    /*load
+    ------
+    ------*/
+    #loadDiv {
+        & > img {
+            align-items: center;
+            width: 20%;
+            height: auto;
+            margin: 10% 40% 0 40%;
+        }
+        & > h3 {
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 2.5vw;
+            font-weight: 900;
+            margin-bottom: -1%;
+        }
+        & > h4 {
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 2vw;
+            margin: 2% 30% 0% 30%;
+            font-weight: 100;
+        }
+        & > .load_box {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            width: 15%; 
+            padding: 10px;
+            & > img {
+                width: 75%;
+                height: auto;
+            }
+            & > h4 {
+                color: #FFFFFF;
+                font-size: 1.5vw;
+                padding-left: 12.5%;
+            }
+        }
+    } 
     /*menu configuracion
     --------------------
     --------------------*/
@@ -147,7 +191,6 @@ CSS para desktop
             border-radius: 2vw;
             border: 0.2vw #6e6e6e8f solid;
             box-shadow: -1vh 1vh 2.5vh rgba(0, 0, 0, 0.479);
-        }
         }
     /*menu pequeño de opciones*/
         .menu_item{
@@ -230,8 +273,88 @@ CSS para desktop
                     background-color: #AA0A0A;
                 }
             }
-
         }
+        /*account*/
+            .account {
+                width: 100%;
+                height: 100%;
+                & > h2 {
+                    margin: 7% 10% 0% 10%;
+                    font-size: 2.25vw;
+                    font-weight: 100;
+                    font-weight: bold;
+                }
+                & > #no_account{
+                    position: absolute;
+                    top: 2.5%;
+                    right: 1.5%;
+                    width: 5vh;
+                    height: 5vh;
+                    border-radius: 100vw;
+                    background-color: transparent;
+                    color: #FFFFFF;
+                    font-size: 1.75vw;
+                    font-weight: bolder;
+                    align-items: center;
+                    border: 1px transparent solid;
+
+                    &:hover {
+                        background-color: #6e6e6e27;
+                    }
+    
+                    & > img {
+                        width: 60%;
+                        height: 60%;
+                    }
+                }
+                & > p {
+                    margin-left: 10%;
+                    margin-top: 0%;
+                    margin-bottom: 0%;
+                    padding: 0%;
+                    font-size: 1.75vw;
+                }
+                & > input {
+                    margin-left: 10%;
+                    margin-bottom: 2%;
+                    margin-top: 0%;
+                    width: 80%;
+                    height: 7%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    font-size: 1.75vw;
+                }
+                & > #deleteaccount {
+                    margin-left: 10%;
+                    width: 81.25%;
+                    height: 9%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    background-color: #FD0000;
+                    color: #FFFFFF;
+                    font-size: 1.75vw;
+                    font-weight: bolder;
+
+                    &:hover {
+                        background-color: #AA0A0A;
+                    }
+                }
+                & > #closeaccount {
+                    margin-left: 10%;
+                    width: 81.25%;
+                    height: 9%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    background-color: #72A53E;
+                    color: #FFFFFF;
+                    font-size: 1.75vw;
+                    font-weight: bolder;
+
+                    &:hover {
+                        background-color: #507B24;
+                    }
+                }
+            }
         
     /*menu_lateral
     --------------
@@ -450,7 +573,7 @@ CSS para desktop
             }
         } 
     }
-
+}
 /* -----
 CSS para tablet
 ----- */
@@ -557,6 +680,229 @@ CSS para tablet
 
         }
     }
+    /*load
+    ------
+    ------*/
+    #loadDiv{
+        & > img {
+            align-items: center;
+            width: 20%;
+            height: auto;
+            margin: 45% 40% 0 40%;
+        }
+        & > h3 {
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 2.5vw;
+            font-weight: 900;
+            margin-bottom: -1%;
+        }
+        & > h4 {
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 2vw;
+            margin: 1% 20% 0% 20%;
+            font-weight: 100;
+        }
+        & > .load_box {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            width: 20%; 
+            padding: 10px;
+            & > img {
+                width: 100%;
+                height: auto;
+            }
+            & > h4 {
+                color: #FFFFFF;
+                font-size: 2.2vw;
+                padding-left: 12.5%;
+            }
+        }
+    } 
+        
+    /*menu configuracion
+    --------------------
+    --------------------*/
+    /*menu grande de opciones*/
+        .menu_opcion {
+            width: 70%;
+            height: 65%;
+            position: absolute;
+            z-index: 1000;
+            background-color: #FFFFFF;
+            margin: 20% 15% 0% 15%;
+            border-radius: 2vw;
+            border: 0.2vw #6e6e6e8f solid;
+            box-shadow: -1vh 1vh 2.5vh rgba(0, 0, 0, 0.479);
+        }
+    /*menu pequeño de opciones*/
+        .menu_item{
+            width: 70%;
+            height: 20%;
+            position: absolute;
+            z-index: 1000;
+            background-color: #FFFFFF;
+            margin: 45% 15% 0% 15%;
+            border-radius: 2vw;
+            border: 0.2vw #6e6e6e8f solid;
+            box-shadow: -1vh 1vh 2.5vh rgba(0, 0, 0, 0.479);
+        }
+        .sub_account{
+            width: 100%;
+            height: 90%;
+            & > h2 {
+                margin: 5% 10% 0% 10%;
+                font-size: 2.1vw;
+                font-weight: 100; 
+                text-align: center;
+            }
+            & > #yesdelete {
+                margin: 0% 7% 5% 17% ;
+                width: 28%;
+                height: 30%;
+                border-radius: 0.75vw;
+                border: 0.2vw #6e6e6e8f solid;
+                background-color: #72A53E;
+                color: #FFFFFF;
+                font-size: 1.75vw;
+                font-weight: bolder;
+
+                &:hover {
+                    background-color: #507B24;
+                }
+            }
+            & > #nodelete {
+                margin: 0% 17% 5% 0% ;
+                width: 28%;
+                height: 30%;
+                border-radius: 0.75vw;
+                border: 0.2vw #6e6e6e8f solid;
+                background-color: #FD0000;
+                color: #FFFFFF;
+                font-size: 1.75vw;
+                font-weight: bolder;
+
+                &:hover {
+                    background-color: #AA0A0A;
+                }
+            }
+            & > #yesclose {
+                margin: 0% 7% 5% 17% ;
+                width: 28%;
+                height: 30%;
+                border-radius: 0.75vw;
+                border: 0.2vw #6e6e6e8f solid;
+                background-color: #72A53E;
+                color: #FFFFFF;
+                font-size: 1.75vw;
+                font-weight: bolder;
+
+                &:hover {
+                    background-color: #507B24;
+                }
+            }
+            & > #noclose {
+                margin: 0% 17% 5% 0% ;
+                width: 28%;
+                height: 30%;
+                border-radius: 0.75vw;
+                border: 0.2vw #6e6e6e8f solid;
+                background-color: #FD0000;
+                color: #FFFFFF;
+                font-size: 1.75vw;
+                font-weight: bolder;
+
+                &:hover {
+                    background-color: #AA0A0A;
+                }
+            }
+        }
+        /*account*/
+            .account {
+                width: 100%;
+                height: 100%;
+                & > h2 {
+                    margin: 13% 10% 0% 10%;
+                    font-size: 3vw;
+                    font-weight: 100;
+                    font-weight: bold;
+                }
+                & > #no_account{
+                    position: absolute;
+                    top: 2.5%;
+                    right: 1.5%;
+                    width: 4vh;
+                    height: 4vh;
+                    border-radius: 100vw;
+                    background-color: transparent;
+                    color: #FFFFFF;
+                    font-size: 1.75vw;
+                    font-weight: bolder;
+                    align-items: center;
+                    border: 1px transparent solid;
+
+                    &:hover {
+                        background-color: #6e6e6e27;
+                    }
+                    
+                    & > img {
+                        width: 60%;
+                        height: 60%;
+                    }
+                }
+                & > p {
+                    margin-left: 10%;
+                    margin-top: 0%;
+                    margin-bottom: 0%;
+                    padding: 0%;
+                    font-size: 2.75vw;
+                }
+                & > input {
+                    margin-left: 10%;
+                    margin-bottom: 2%;
+                    margin-top: 0%;
+                    width: 80%;
+                    height: 7%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    font-size: 2.75vw;
+                }
+                & > #deleteaccount {
+                    margin-left: 10%;
+                    width: 81.25%;
+                    height: 9%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    background-color: #FD0000;
+                    color: #FFFFFF;
+                    font-size: 2.75vw;
+                    font-weight: bolder;
+
+                    &:hover {
+                        background-color: #AA0A0A;
+                    }
+                }
+                & > #closeaccount {
+                    margin-left: 10%;
+                    width: 81.25%;
+                    height: 9%;
+                    border-radius: 0.75vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    background-color: #72A53E;
+                    color: #FFFFFF;
+                    font-size: 2.75vw;
+                    font-weight: bolder;
+
+                    &:hover {
+                        background-color: #507B24;
+                    }
+                }
+            }
     /*menu_lateral
     --------------
     --------------*/
@@ -775,6 +1121,7 @@ CSS para tablet
         } 
     }
 } 
+
 /* -----
 CSS para movil
 ----- */
@@ -880,6 +1227,231 @@ CSS para movil
 
         }
     }
+    /*load
+    ------
+    ------*/
+    #loadDiv {
+        & > img {
+            align-items: center;
+            width: 30%;
+            height: auto;
+            margin: 55% 35% 0 35%;
+        }
+        & > h3 {
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 3vw;
+            font-weight: 900;
+            margin-bottom: 0%;
+            padding: 0;
+        }
+        & > h4 {
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 2.5vw;
+            margin: -1% 15% 0% 15%;
+            font-weight: 100;
+        }
+        & > .load_box {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            width: 20%; 
+            padding: 10px;
+            & > img {
+                width: 100%;
+                height: auto;
+            }
+            & > h4 {
+                color: #FFFFFF;
+                font-size: 2.2vw;
+                padding-left: 12.5%;
+            }
+        }
+    } 
+    
+    /*menu configuracion
+    --------------------
+    --------------------*/
+    /*menu grande de opciones*/
+        .menu_opcion {
+            width: 80%;
+            height: 50%;
+            position: absolute;
+            z-index: 1000;
+            background-color: #FFFFFF;
+            margin: 40% 10% 0% 10%;
+            border-radius: 4vw;
+            border: 0.2vw #6e6e6e8f solid;
+            box-shadow: -1vh 1vh 2.5vh rgba(0, 0, 0, 0.479);
+        }
+    /*menu pequeño de opciones*/
+        .menu_item{
+            width: 80%;
+            height: 10%;
+            position: absolute;
+            z-index: 1000;
+            background-color: #FFFFFF;
+            margin: 80% 10% 0% 10%;
+            border-radius: 2vw;
+            border: 0.2vw #6e6e6e8f solid;
+            box-shadow: -1vh 1vh 2.5vh rgba(0, 0, 0, 0.479);
+        }
+        .sub_account{
+            width: 100%;
+            height: 85%;
+            & > h2 {
+                margin: 2.5% 10% -5% 10%;
+                font-size: 3vw;
+                font-weight: 100; 
+                text-align: center;
+            }
+            & > #yesdelete {
+                margin: 0% 7% 5% 17% ;
+                width: 28%;
+                height: 30%;
+                border-radius: 0.75vw;
+                border: 0.2vw #6e6e6e8f solid;
+                background-color: #72A53E;
+                color: #FFFFFF;
+                font-size: 3vw;
+                font-weight: bolder;
+
+                &:hover {
+                    background-color: #507B24;
+                }
+            }
+            & > #nodelete {
+                margin: 0% 17% 5% 0% ;
+                width: 28%;
+                height: 30%;
+                border-radius: 0.75vw;
+                border: 0.2vw #6e6e6e8f solid;
+                background-color: #FD0000;
+                color: #FFFFFF;
+                font-size: 3vw;
+                font-weight: bolder;
+
+                &:hover {
+                    background-color: #AA0A0A;
+                }
+            }
+            & > #yesclose {
+                margin: 0% 7% 5% 17% ;
+                width: 28%;
+                height: 30%;
+                border-radius: 0.75vw;
+                border: 0.2vw #6e6e6e8f solid;
+                background-color: #72A53E;
+                color: #FFFFFF;
+                font-size: 3vw;
+                font-weight: bolder;
+
+                &:hover {
+                    background-color: #507B24;
+                }
+            }
+            & > #noclose {
+                margin: 0% 17% 5% 0% ;
+                width: 28%;
+                height: 30%;
+                border-radius: 0.75vw;
+                border: 0.2vw #6e6e6e8f solid;
+                background-color: #FD0000;
+                color: #FFFFFF;
+                font-size: 3vw;
+                font-weight: bolder;
+
+                &:hover {
+                    background-color: #AA0A0A;
+                }
+            }
+            
+        }
+        /*account*/
+            .account {
+                width: 100%;
+                height: 100%;
+                & > h2 {
+                    margin: 13% 10% 0% 10%;
+                    font-size: 3.5vw;
+                    font-weight: 100;
+                    font-weight: bold;
+                }
+                & > #no_account{
+                    position: absolute;
+                    top: 2.5%;
+                    right: 1.5%;
+                    width: 4vh;
+                    height: 4vh;
+                    border-radius: 100vw;
+                    background-color: transparent;
+                    color: #FFFFFF;
+                    font-size: 1.75vw;
+                    font-weight: bolder;
+                    align-items: center;
+                    border: 1px transparent solid;
+
+                    &:hover {
+                        background-color: #6e6e6e27;
+                    }
+                
+                    & > img {
+                        width: 60%;
+                        height: 60%;
+                    }
+                }
+                & > p {
+                    margin-left: 10%;
+                    margin-top: 0%;
+                    margin-bottom: 0%;
+                    padding: 0%;
+                    font-size: 3vw;
+                }
+                & > input {
+                    margin-left: 10%;
+                    margin-bottom: 2%;
+                    margin-top: 0%;
+                    width: 80%;
+                    height: 7%;
+                    border-radius: 1vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    font-size: 3vw;
+                }
+                & > #deleteaccount {
+                    margin-left: 10%;
+                    width: 81.25%;
+                    height: 9%;
+                    border-radius: 1vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    background-color: #FD0000;
+                    color: #FFFFFF;
+                    font-size: 3vw;
+                    font-weight: bolder;
+
+                    &:hover {
+                        background-color: #AA0A0A;
+                    }
+                }
+                & > #closeaccount {
+                    margin-left: 10%;
+                    width: 81.25%;
+                    height: 9%;
+                    border-radius: 1vw;
+                    border: 0.2vw #6e6e6e8f solid;
+                    background-color: #72A53E;
+                    color: #FFFFFF;
+                    font-size: 3vw;
+                    font-weight: bolder;
+
+                    &:hover {
+                        background-color: #507B24;
+                    }
+                }
+            }
     /*menu_lateral
     --------------
     --------------*/
