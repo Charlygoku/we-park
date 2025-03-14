@@ -71,6 +71,8 @@ if (bugButton) {
                         removeClass();
                         menuOpcion.classList.add('submenu-wrapper');
                             loadForm(menuOpcion, './php/create/bug/bug_thanks.php');
+                            // quitar estilos de botones activos
+                            ButtonOff();
                             setTimeout(() => {
                                 if (menuOpcion.classList.contains('submenu-wrapper')) {
                                     // quitar clase
