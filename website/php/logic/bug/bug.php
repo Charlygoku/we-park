@@ -7,6 +7,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     header('Content-Type: application/json');
 
+    // Obtener el ID del usuario desde la sesión
+    if (!isset($_SESSION['user_id'])) {
+        echo json_encode(['success' => false, 'message' => 'Usuario no autenticado.']);
+        exit;
+    }
+    $id_user = $_SESSION['user_id'];
+
     // Obtener los datos del formulario
     $username = $_POST['username'] ?? '';
     $email = $_POST['email'] ?? '';
@@ -40,7 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $imgTipo = null;
 
     if (!empty($_FILES['img']['tmp_name'])) {
-        // Verificar si el archivo es una imagen válida
         $check = getimagesize($_FILES["img"]["tmp_name"]);
         if ($check !== false) {
             $imgContenido = file_get_contents($_FILES['img']['tmp_name']);
@@ -52,8 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // Sentencia preparada para evitar inyección SQL
-    $sql = "INSERT INTO bugs (username, email, titulo, descripcion, fecha, hora, sistema, navegador, dispositivo, imagen, tipo_imagen)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO bugs (id_user, username, email, titulo, descripcion, fecha, hora, sistema, navegador, dispositivo, imagen, tipo_imagen) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
     $stmt_InsertBug = $conn->prepare($sql);
 
@@ -63,12 +69,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // Vincular parámetros
-    $stmt_InsertBug->bind_param("sssssssssss", $username, $email, $Tit_bug, $Descripcion, $Fecha, $Hora, $system, $browser, $device, $imgContenido, $imgTipo);
+    $stmt_InsertBug->bind_param("isssssssssss", $id_user, $username, $email, $Tit_bug, $Descripcion, $Fecha, $Hora, $system, $browser, $device, $imgContenido, $imgTipo);
 
     // Ejecutar la consulta
     if ($stmt_InsertBug->execute()) {
         echo json_encode(['success' => true, 'message' => 'Reporte enviado con éxito.']);
-        // sesiones de mute
         $_SESSION['muteReport'] = time() + (5 * 60); 
         $_SESSION['muteReport_day'] = date('Y-m-d'); 
     } else {
