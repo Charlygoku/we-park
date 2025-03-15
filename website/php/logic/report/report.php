@@ -48,6 +48,7 @@ $result = $conn->query($sql);
         <table>
             <tr>
                 <th>ID</th>
+                <th>Id del usuario</th>
                 <th>Username</th>
                 <th>Email</th>
                 <th>Título</th>
@@ -65,6 +66,7 @@ $result = $conn->query($sql);
             <?php while ($row = $result->fetch_assoc()): ?>
                 <tr id="fila-<?php echo $row['id']; ?>">
                     <td><?php echo htmlspecialchars($row['id']); ?></td>
+                    <td><?php echo htmlspecialchars($row['id_user']); ?></td>
                     <td><?php echo htmlspecialchars($row['username']); ?></td>
                     <td><?php echo htmlspecialchars($row['email']); ?></td>
                     <td><?php echo htmlspecialchars($row['titulo']); ?></td>

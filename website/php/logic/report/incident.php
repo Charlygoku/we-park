@@ -41,6 +41,7 @@ $result = $conn->query($sql);
         <table>
             <tr>
                 <th>ID</th>
+                <th>Id del marker</th>
                 <th>Tipo de Vía</th>
                 <th>Nombre de Vía</th>
                 <th>Población</th>
@@ -54,6 +55,7 @@ $result = $conn->query($sql);
             <?php while ($row = $result->fetch_assoc()): ?>
                 <tr id="fila-<?php echo $row['id']; ?>">
                     <td><?php echo htmlspecialchars($row['id']); ?></td>
+                    <td><?php echo htmlspecialchars($row['id_mark']); ?></td>
                     <td><?php echo htmlspecialchars($row['tipo_via']); ?></td>
                     <td><?php echo htmlspecialchars($row['nombre_via']); ?></td>
                     <td><?php echo htmlspecialchars($row['poblacion']); ?></td>
