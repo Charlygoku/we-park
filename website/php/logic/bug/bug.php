@@ -74,8 +74,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Ejecutar la consulta
     if ($stmt_InsertBug->execute()) {
         echo json_encode(['success' => true, 'message' => 'Reporte enviado con éxito.']);
-        $_SESSION['muteReport'] = time() + (5 * 60); 
-        $_SESSION['muteReport_day'] = date('Y-m-d'); 
+        $_SESSION['muteReport'] = time() + 300; // 5 minutos desde ahora
+        $_SESSION['muteReport_day'] = date('Y-m-d'); // Guarda el día actual 
     } else {
         echo json_encode(['success' => false, 'message' => 'Error al guardar el reporte: ' . $stmt_InsertBug->error]);
     }

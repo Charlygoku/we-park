@@ -67,8 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($stmt_InsertIncidents->execute()) {
             echo json_encode(['success' => true, 'message' => 'Incidente registrado correctamente']);
-            $_SESSION['muteIncident'] = time() + (5 * 60);
-            $_SESSION['muteIncident_day'] = date('Y-m-d');
+            $_SESSION['muteIncident'] = time() + 300; // 5 minutos desde ahora
+            $_SESSION['muteIncident_day'] = date('Y-m-d'); // Guarda el día actual
         } else {
             echo json_encode(['success' => false, 'message' => 'Error al registrar el incidente: ' . $stmt_InsertIncidents->error]);
         }

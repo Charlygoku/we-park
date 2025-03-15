@@ -1,24 +1,18 @@
 const checkSession = () => {
-    // checkSessionReport: Función que consulta al servidor si la sesión sigue activa
-    const checkSessionReport = () =>  {
-        fetch('./php/logic/mute/mute_report.php')
-            .catch(error => console.error('Error al ejecutar el PHP:', error));
+    // Función general que consulta al servidor si la sesión sigue activa
+    const checkSessionStatus = (url) => {
+        fetch(url)
+            .catch(error => console.error(`Error al ejecutar el PHP en ${url}:`, error));
     };
     
-    // checkSessionIncident: Función que consulta al servidor si la sesión sigue activa
-    const checkSessionIncident = () => {
-        fetch('./php/logic/mute/mute_incident.php')
-            .catch(error => console.error('Error al ejecutar el PHP:', error));
-    };
-    
-    // Llamar a la función para ejecutar el PHP
-    checkSessionIncident();
-    checkSessionReport();
-}
+    checkSessionStatus('./php/logic/mute/mute_report.php');
+    checkSessionStatus('./php/logic/mute/mute_incident.php');
+};
 
 checkSession();
 
-// Ejecutar la función cada 1 minuto 
-setInterval(checkSession , 60000);
+// Ejecutar la función cada 1 minuto
+setInterval(checkSession, 60000);
+
 
 
