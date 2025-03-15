@@ -22,6 +22,8 @@ if (bugButton) {
                             // Variable de control
                             removeClass();
                             controlTrue();
+                            // quitar estilos de botones activos
+                            ButtonOff();
                           
                         // Desconectar el observador bug
                         BugObserver.disconnect();
