@@ -1,86 +1,119 @@
 <?php
-// Iniciar la sesión
 session_start();
 
-// Comprobar si el usuario está autenticado
-if (isset($_SESSION['username'])) {
-
-    // Verificar si tiene mute activado (en función de los valores de la sesión)
-    if (isset($_SESSION['muteIncident']) && isset($_SESSION['muteIncident_day'])) {
-        // Si tiene mute, no mostrar el formulario de incidencia
-        echo json_encode(['existe' => false, 'html' => '']);
-    } else {
-        // Si no tiene mute, enviar el formulario HTML
-        $html = '
-            <div class="adddel_warning">
-                <h2>Incidencias</h2><br>
-                <button id="no_warning" type="button">
-                    <img src="img/close.svg" alt="Cerrar">
-                </button>
-                <form id="dangwarning">
-                    <label for="tipo-via">Tipo de Vía:</label>
-                    <br>
-                    <select id="tipo-via" name="tipo-via" required>
-                        <option value="">Seleccione</option>
-                        <option value="calle">Calle</option>
-                        <option value="avenida">Avenida</option>
-                        <option value="plaza">Plaza</option>
-                    </select>
-                    <br>
-
-                    <label for="nombre-via">Nombre de la Vía:</label>
-                    <br>
-                    <input type="text" id="nombre-via" name="nombre-via" placeholder="Nombre de la vía" required>
-                    <br>
-
-                    <label for="poblacion">Población:</label>
-                    <br>
-                    <input type="text" id="poblacion" name="poblacion" placeholder="Población" required>  
-                    <br>
-
-                    <label for="provincia">Provincia:</label>
-                    <br>
-                    <select id="provincia" name="provincia" required>
-                        <option value="">Seleccione</option>
-                        <option value="Madrid">Madrid</option>
-                    </select>
-                    <br>
-
-                    <label for="comunidad">Comunidad Autónoma:</label>
-                    <br>
-                    <select id="comunidad" name="comunidad" required>
-                        <option value="">Seleccione</option>
-                        <option value="Comunidad de Madrid">Comunidad de Madrid</option>
-                    </select>
-                    <br>   
-
-                    <label for="pais">País:</label>
-                    <br>
-                    <select id="pais" name="pais" required>
-                        <option value="">Seleccione</option>
-                        <option value="es">España</option>
-                    </select>
-                    <br>
-
-                    <label for="NumPlazasModif">Numero de plazas a modificar:</label>
-                    <br>
-                    <input type="number" name="NumPlazasModif" id="NumPlazasModif" required>
-                    <br>
-                    <label for="observacion">Otras observacion (Opcional):</label><br>
-                    <textarea name="observacion" id="observacion"></textarea><br>
-                <br>
-                <button id="yes_addwarning" type="submit">Guardar</button>
-                <br>
-                <button id="clear_addwarning" type="button">Limpiar</button>
-                <br>
-                <br>
-            </form>
-            </div>';
-        echo json_encode(['existe' => true, 'html' => $html]);
-    }
-} else {
-    // Si no hay sesión activa, redirigir al login
-    header("Location: ../../index.html");
-    exit();
+if (!isset($_SESSION['user_id']) || ($_SESSION['user_id'] != 1 )) {
+  header("Location: ../../../index.html");
 }
+require '../../../../config/config.php';
+
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM incidents";
+$result = $conn->query($sql);
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar Incidentes</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Incidentes</h1>
+
+    <?php if ($result->num_rows > 0): ?>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Id del marker</th>
+                <th>Tipo de Vía</th>
+                <th>Nombre de Vía</th>
+                <th>Población</th>
+                <th>Provincia</th>
+                <th>Comunidad</th>
+                <th>País</th>
+                <th>Número de Plazas Modificadas</th>
+                <th>Observaciones</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <tr id="fila-<?php echo $row['id']; ?>">
+                    <td><?php echo htmlspecialchars($row['id']); ?></td>
+                    <td><?php echo htmlspecialchars($row['id_mark']); ?></td>
+                    <td><?php echo htmlspecialchars($row['tipo_via']); ?></td>
+                    <td><?php echo htmlspecialchars($row['nombre_via']); ?></td>
+                    <td><?php echo htmlspecialchars($row['poblacion']); ?></td>
+                    <td><?php echo htmlspecialchars($row['provincia']); ?></td>
+                    <td><?php echo htmlspecialchars($row['comunidad']); ?></td>
+                    <td><?php echo htmlspecialchars($row['pais']); ?></td>
+                    <td><?php echo htmlspecialchars($row['NumPlazasModif']); ?></td>
+                    <td><?php echo htmlspecialchars($row['Observacion']); ?></td>
+                    <td><?php echo htmlspecialchars($row['Fecha']); ?></td>
+                    <td>
+                        <button onclick="eliminarIncidente(<?php echo $row['id']; ?>)">Eliminar</button>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+    <?php else: ?>
+        <p>No se encontraron incidentes.</p>
+    <?php endif; ?>
+
+    <script>
+        function eliminarIncidente(id) {
+            if (confirm("¿Estás seguro de eliminar este incidente?")) {
+                fetch('eliminar_incidente.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: 'id=' + encodeURIComponent(id)
+                })
+                .then(response => response.text())
+                .then(data => {
+                    if (data.trim() === "success") {
+                        alert("Incidente eliminado correctamente.");
+                        let fila = document.getElementById("fila-" + id);
+                        if (fila) {
+                            fila.remove(); // Elimina la fila sin recargar
+                        }
+                    } else {
+                        alert("Error al eliminar el incidente: " + data);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Error al eliminar el incidente.");
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+<?php
+$conn->close();
 ?>
