@@ -1,5 +1,12 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['user_id']) || ($_SESSION['user_id'] != 1 )) {
+  header("Location: ../../../index.html");
+}
+
 require '../../../../config/config.php';
+
 
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
