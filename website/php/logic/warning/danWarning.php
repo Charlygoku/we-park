@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comunidad = $_POST['comunidad'] ?? '';
     $pais = $_POST['pais'] ?? '';
     $NumPlazasModif = $_POST['NumPlazasModif'] ?? '';
+    $observacion = $_POST["observacion"] ?? '';
 
     // Sanear los datos para prevenir inyecciones SQL
     $tipo_via = $conn->real_escape_string(trim($tipo_via));
@@ -33,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comunidad = $conn->real_escape_string(trim($comunidad));
     $pais = $conn->real_escape_string(trim($pais));
     $NumPlazasModif = $conn->real_escape_string(trim($NumPlazasModif));
+    $observacion = $conn->real_escape_string(trim($observacion));
 
     // Validar que los campos no estén vacíos
     if (empty($tipo_via) || empty($nombre_via) || empty($poblacion) || empty($provincia) || empty($comunidad) || empty($pais) || empty($NumPlazasModif)) {
@@ -56,14 +58,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt_SelectMarker->fetch();
 
         // Insertar en la tabla incidents con la columna id_marker
-        $stmt_InsertIncidents = $conn->prepare('INSERT INTO incidents (id_mark, tipo_via, nombre_via, poblacion, provincia, comunidad, pais, NumPlazasModif) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+        $stmt_InsertIncidents = $conn->prepare('INSERT INTO incidents (id_mark, tipo_via, nombre_via, poblacion, provincia, comunidad, pais, NumPlazasModif, Observacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
         if ($stmt_InsertIncidents === false) {
             echo json_encode(['success' => false, 'message' => 'Error al preparar la consulta: ' . $conn->error]);
             $stmt_SelectMarker->close();
             exit;
         }
 
-        $stmt_InsertIncidents->bind_param("issssssi", $marker_id, $tipo_via, $nombre_via, $poblacion, $provincia, $comunidad, $pais, $NumPlazasModif);
+        $stmt_InsertIncidents->bind_param("issssssis", $marker_id, $tipo_via, $nombre_via, $poblacion, $provincia, $comunidad, $pais, $NumPlazasModif, $observacion);
 
         if ($stmt_InsertIncidents->execute()) {
             echo json_encode(['success' => true, 'message' => 'Incidente registrado correctamente']);
@@ -85,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Cerrar la conexión
-if($conn){
+if ($conn) {
     $conn->close();
 }
 ?>

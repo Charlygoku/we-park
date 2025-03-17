@@ -66,7 +66,8 @@ if (isset($_SESSION['username'])) {
                     <br>
                     <input type="number" name="NumPlazasModif" id="NumPlazasModif" required>
                     <br>
-
+                    <label for="observacion">Otras observacion (Opcional):</label><br>
+                    <textarea name="observacion" id="observacion"></textarea><br>
                 <br>
                 <button id="yes_addwarning" type="submit">Guardar</button>
                 <br>
