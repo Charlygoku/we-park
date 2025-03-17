@@ -20,7 +20,7 @@ if (isset($_SESSION['username'])) {
             <button id='closeaccount'>Cerrar Sesión</button><br>
             <button id='deleteaccount'>Eliminar</button>
         ";
-    if (isset($id)) {
+    if ($id == 1) {
         echo '
             <br>
             <button id="Reportes" onclick="window.location.href=\'./php/logic/report/report.php\'">Reportes</button>
