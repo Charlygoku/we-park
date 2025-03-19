@@ -27,7 +27,7 @@ if (isset($_SESSION['username'])) {
                maxlength="16" 
                pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[.,_-#@$!%*?&\[\]()]).{8,}" 
                title="La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula, un número y un carácter especial."
-               oninput="countSymbols()"><br>
+               <br>
         
         <label for="re_password">Repetir Contraseña:</label><br>
         <input  type="password" id="re_password" name="re_password" required><br><br>

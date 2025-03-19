@@ -206,33 +206,23 @@ if (accountButton) {
                                     // Si eliminar cuenta
                                     yesdelete.addEventListener('click' , function(event){
                                         event.preventDefault();
-                                        // Valor que se enviará al servidor
-                                        const deletevalue = 1; 
                                         
                                         // Enviar los datos al archivo PHP usando fetch
-                                            fetch('./php/logic/login/delete.php', {
-                                                method: 'POST',
-                                                headers: {
-                                                    'Content-Type': 'application/x-www-form-urlencoded', 
-                                                },
-                                                body: `deletevalue=${encodeURIComponent(deletevalue)}`, 
-                                            })
-                                            .then(response => response.json()) 
-                                            .then(data => {
-                                                if (data.success) {
-                                                    if (data.redirect) {
-                                                        window.location.href = data.redirect; 
-                                                        
-                                                    } else {
-                                                        location.reload(); 
-                                                    }
-                                                } else {
-                                                    alert('Error: ' + data.message); 
-                                                }
-                                            })
-                                            .catch(error => {
-                                                console.error('Error:', error); 
-                                            });
+                                        fetch("./php/logic/login/delete.php", {
+                                            method: "POST",
+                                            headers: {
+                                                "Content-Type": "application/json"
+                                            }
+                                        })
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            if (data.success) {
+                                                window.location.reload(); // Recargar la página después de eliminar la cuenta
+                                            } else {
+                                                alert("Error: " + data.message);
+                                            }
+                                        })
+                                        .catch(error => console.error("Error en la solicitud:", error));
                                             delete_from.disconnect();
                                     });
                             });
