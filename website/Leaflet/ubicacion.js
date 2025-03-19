@@ -15,7 +15,7 @@ function obtenerUbicacion() {
 // Función para establecer una ubicación predeterminada
 function establecerUbicacionPredeterminada() {
     if (typeof map !== "undefined") {
-        map.setView([40.256786, -3.697198], 15);
+        map.setView([40.256786, -3.697198], 16);
     }
 }
 
@@ -26,8 +26,7 @@ function mostrarUbicacion(posicion) {
     const precision = posicion.coords.accuracy;
 
     if (typeof map !== "undefined") {
-        map.setView([latitud, longitud], 15);
-        console.log("Latitud:", latitud, "Longitud:", longitud, "Precisión:", precision, "m");
+        map.setView([latitud, longitud], 16);
     }
 }
 

@@ -5,7 +5,7 @@ session_start();
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
     $email = $_SESSION['email'];
-    $id = $_SESSION['user_id'];
+  	$id = $_SESSION['user_id'];
     echo "
         <div class='account'>
             <h2>Detalles de la Cuenta</h2><br>
@@ -19,15 +19,14 @@ if (isset($_SESSION['username'])) {
             <button id='closeaccount'>Cerrar Sesión</button><br>
             <button id='deleteaccount'>Eliminar</button>
         ";
-    if ($id == 1) {
-        echo '
-            <br>
-            <button id="Reportes" onclick="window.location.href=\'./php/logic/report/report.php\'">Reportes</button>
-            <button id="Incidencias" onclick="window.location.href=\'./php/logic/report/incident.php\'">Incidencias</button>
-        ';
-    }  
-    echo"
-        </div>";
+  		if (($id == 1)) {
+        	echo '
+            	<br>
+            	<button id="Reportes" onclick="window.location.href=\'./php/logic/report/report.php\'">Reportes</button>
+            	<button id="Incidencias" onclick="window.location.href=\'./php/logic/report/incident.php\'">Incidencias</button>
+        	';
+        }
+	echo "</div>";  
 } else {
     header("Location: ../../index.html");
 exit();

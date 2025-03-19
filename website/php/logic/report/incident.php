@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user_id']) || ($_SESSION['user_id'] != 1 )) {
+if (!isset($_SESSION['user_id']) || ($_SESSION['user_id'] != 8 && $_SESSION['user_id'] != 9)) {
   header("Location: ../../../index.html");
 }
 require '../../../../config/config.php';

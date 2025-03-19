@@ -11,7 +11,6 @@ if (isset($_SESSION['username'])) {
     echo '
     <form class="createForm" method="POST">
         <h2>Crear una cuenta</h2>
-        <br>
         <label for="username">Nombre de Usuario:</label><br>
         <input type="text" id="username" name="username" required><br>
 
@@ -28,7 +27,7 @@ if (isset($_SESSION['username'])) {
                pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[.,_-#@$!%*?&\[\]()]).{8,}" 
                title="La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula, un número y un carácter especial."
                <br>
-        
+               
         <label for="re_password">Repetir Contraseña:</label><br>
         <input  type="password" id="re_password" name="re_password" required><br><br>
 

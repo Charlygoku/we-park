@@ -4,10 +4,8 @@ session_start();
 // Verificar si la variable de sesión que indica si el usuario está logueado existe
 if (isset($_SESSION["username"])) {
     if (isset($_SESSION["muteReport"]) && isset($_SESSION["muteReport_day"])) {
-       // Si tiene mute, no mostrar el formulario de incidencia
-       echo json_encode(['existe' => false, 'html' => '']);
+        echo json_encode(['existe' => false, 'html' => '']); 
     } else {
-        // Si no tiene mute, enviar el formulario HTML
         // Si la sesión está iniciada
         $username = $_SESSION["username"];
         $email = $_SESSION["email"];

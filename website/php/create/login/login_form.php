@@ -26,7 +26,7 @@ if (isset($_SESSION['username'])) {
         <p>¿Aun no tienes cuenta? <a href="" id="Create_a"> Create una cuenta ahora</a>
         </p>
         
-        
+
 
     </form>';
 }

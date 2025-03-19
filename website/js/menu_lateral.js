@@ -1,3 +1,4 @@
+// variables del DOM
 const buttonMenuLat = document.getElementById('bot_men_lat');
 const divMenuLat = document.getElementById('men_lat');
 const imgMenuLat = document.getElementById('img_men_lat');

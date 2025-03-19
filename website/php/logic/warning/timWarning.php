@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt_UpdateParking->bind_param("ii", $tiempo_minutos, $user_id);
 
     if ($stmt_UpdateParking->execute()) {
-        $_SESSION['mark_id'] = 0;
+        // si esisterian los eventos $_SESSION['mark_id'] = 0;
         echo json_encode(['success' => true, 'message' => 'Tiempo asignado correctamente']);
     } else {
         echo json_encode(['success' => false, 'message' => 'Error al asignar el tiempo: ' . $stmt_UpdateParking->error]);

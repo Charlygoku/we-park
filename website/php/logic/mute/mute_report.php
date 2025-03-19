@@ -12,4 +12,3 @@ if (isset($_SESSION['muteReport'], $_SESSION['muteReport_day'])) {
 
 
 
-

@@ -1,4 +1,4 @@
-/// Inicializar el mapa sin establecer una ubicación inicial
+// Inicializar el mapa sin establecer una ubicación inicial
 const map = L.map('map');
 
 // Agregar una capa de mapa base

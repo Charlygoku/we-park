@@ -64,8 +64,8 @@ const deletlogin = () => {
         loginFormContainer.remove();
         // activar la pantalla de carga
         if (load === 0){
-            loadDiv.style.display = "block";
-            load = 1;
+          loadDiv.style.display = "block";
+          load = 1;
         }
     }
 }; 

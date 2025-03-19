@@ -35,7 +35,7 @@ if (infoButton) {
                 InfoObserver.observe(document.body, { childList: true, subtree: true });
         } else {
             removeClass();
-            ButtonOff();
+          	ButtonOff();
             infoCount = true;
         }
     });

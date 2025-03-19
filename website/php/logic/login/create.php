@@ -3,7 +3,7 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Incluir archivo de configuración
-    require "../../../../config/config.php"; 
+    require '../../../../config/config.php'; 
 
     header('Content-Type: application/json');
 

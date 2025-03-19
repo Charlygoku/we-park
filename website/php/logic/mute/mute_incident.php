@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+session_start(); // Iniciar la sesión
 
 // Verificar si la sesión ha expirado
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -11,3 +11,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
 }
 ?>
+

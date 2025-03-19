@@ -1,4 +1,5 @@
 <?php
+// Iniciar la sesión al inicio del archivo PHP
 session_start();
 
 // Verificar si la variable de sesión que indica si el usuario está logueado existe

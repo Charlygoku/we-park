@@ -22,7 +22,7 @@ if (bugButton) {
                             // Variable de control
                             removeClass();
                             controlTrue();
-                            // quitar estilos de botones activos
+                      		// quitar estilos de botones activos
                             ButtonOff();
                           
                         // Desconectar el observador bug
@@ -73,8 +73,8 @@ if (bugButton) {
                         removeClass();
                         menuOpcion.classList.add('submenu-wrapper');
                             loadForm(menuOpcion, './php/create/bug/bug_thanks.php');
-                            // quitar estilos de botones activos
-                            ButtonOff();
+                      		// quitar estilos de botones activos
+                    		ButtonOff();
                             setTimeout(() => {
                                 if (menuOpcion.classList.contains('submenu-wrapper')) {
                                     // quitar clase
@@ -89,7 +89,7 @@ if (bugButton) {
                     removeClass();
                     bugCount = true;
                     BugObserver.disconnect();
-                    // quitar estilos de botones activos
+                  	// quitar estilos de botones activos
                     ButtonOff();
                 });
                 }

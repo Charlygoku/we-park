@@ -95,8 +95,7 @@ if (accountButton) {
                     controlTrue();
                     accountCount = false;
                     // agregar clase
-                    menuOpcion.classList.add('menu_opcion');
-                        
+                    menuOpcion.classList.add('menu_opcion');   
                 });
                 // Observador de account
                 const accountObserver = new MutationObserver( () => {

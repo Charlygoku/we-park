@@ -106,8 +106,6 @@ if (warningButton) {
                                             // añadir formulario de agradecimiento
                                             menuOpcion.classList.add('submenu-wrapper');
                                             loadForm(menuOpcion, './php/create/warning/add_warning_thank.php');
-                                            // quitar estilos de botones activos
-                                            ButtonOff();
                                             setTimeout(() => {
                                                 if (menuOpcion.classList.contains('submenu-wrapper')) {
                                                     // quitar clase
@@ -208,8 +206,6 @@ if (warningButton) {
                                         if (data.success) {
                                             removeClass()
                                             warningCount = true; 
-                                            // quitar estilos de botones activos
-                                            ButtonOff();
                                         }
                                     })
                                     .catch(error => {
@@ -297,8 +293,6 @@ if (warningButton) {
                                     .then(response => response.json())
                                     .then(result => {
                                         if (result.success) {
-                                            // quitar estilos de botones activos
-                                            ButtonOff();
                                         } else {
                                             alert('Error: ' + result.message);
                                         }
@@ -405,8 +399,6 @@ if (warningButton) {
                                             // añadir formulario de agradecimiento
                                             menuOpcion.classList.add('submenu-wrapper');
                                             loadForm(menuOpcion, './php/create/warning/dang_warning_thank.php');
-                                            // quitar estilos de botones activos
-                                            ButtonOff();
                                             setTimeout(() => {
                                                 if (menuOpcion.classList.contains('submenu-wrapper')) {
                                                     // quitar clase
@@ -452,7 +444,7 @@ if (warningButton) {
                 WarningObserver.observe(document.body, { childList: true, subtree: true });
             } else {
                 removeClass();
-                ButtonOff();
+              	ButtonOff();
                 warningCount = true;
             }
     });

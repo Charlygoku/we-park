@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // Incluir archivo de configuración de la base de datos
-require '../../../config/config.php';
+require '../../../config/config.php'; 
 
 // Verificar conexión a la base de datos
 if (!isset($conn)) {

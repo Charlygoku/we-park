@@ -1,13 +1,6 @@
 <?php
-// Configuración de la base de datos
-$host = "localhost";
-$user = "alumno"; // Cambiar si es necesario
-$password = "alumno"; // Cambiar si es necesario
-$dbname = "Wepark"; // Cambia este nombre por el de tu base de datos
-
-// Conexión a la base de datos
-$conn = new mysqli($host, $user, $password, $dbname);
-
+// Incluir archivo de configuración
+require '../../../config/config.php'; 
 // Verificar conexión
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
