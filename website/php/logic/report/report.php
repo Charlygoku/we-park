@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user_id']) || ($_SESSION['user_id'] != 8 && $_SESSION['user_id'] != 9)) {
+if (!isset($_SESSION['user_id']) || ($_SESSION['user_id'] != 1 )) {
   header("Location: ../../../index.html");
 }
 
