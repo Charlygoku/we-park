@@ -159,7 +159,7 @@ const loginFormContainer = document.getElementById('formulario-login');
                         const formData = new FormData(form_cre);
                         const passwordInput = document.getElementById("re_password");
                     
-                        const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+                        const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\?<=>;:\/.,\+*\(\)'&%$#"|¿¡!\[\]{}]).{8,}$/;
                     
                         // Verificar que los campos requeridos no estén vacíos
                         if (!formData.get('username') || !formData.get('email') || !formData.get('password') || !passwordInput.value) {
