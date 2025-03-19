@@ -1,4 +1,3 @@
-account_from.php
 <?php
 // Iniciar la sesión
 session_start();
