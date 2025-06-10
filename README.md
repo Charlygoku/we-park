@@ -2,7 +2,7 @@
 
 <table style="border: none;">
   <tr>
-    <td style="border: none;>
+    <td style="border: none;">
       <img src="website/img/favoricon.svg" alt="Logo" width="200" style="border-radius: 10px;">
     </td>
     <td style="border: none; padding-left: 15px;">
