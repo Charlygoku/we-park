@@ -1,6 +1,6 @@
 # we-park
 
-<table>
+<table style="border: none;">
   <tr>
     <td><img src="website/img/favoricon.svg" alt="Logo" width="200" style="border-radius: 10px;"></td>
     <td style="padding-left: 15px;">
