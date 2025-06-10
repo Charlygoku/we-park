@@ -2,5 +2,5 @@
 The project is focused on helping people find parking spaces to avoid traffic.
 
 
-![Mi foto](website/img/favoricon.svg)
+<img src="website/img/favoricon.svg" alt="Logo" width="200" style="border-radius: 10px;">
 
