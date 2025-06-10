@@ -1,7 +1,7 @@
 # we-park
 
 <table style="border: none;">
-  <tr style="border: none;>
+  <tr style="border: none;">
     <td style="border: none;">
       <img src="website/img/favoricon.svg" alt="Logo" width="200" style="border-radius: 10px;">
     </td>
