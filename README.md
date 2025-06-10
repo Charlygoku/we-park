@@ -1,6 +1,4 @@
 # we-park
-The project is focused on helping people find parking spaces to avoid traffic.
-
 
 <table>
   <tr>
@@ -8,7 +6,7 @@ The project is focused on helping people find parking spaces to avoid traffic.
     <td style="padding-left: 15px;">
       <strong>The project is focused on helping people find parking spaces to avoid traffic.</strong><br>
       Desarrollador web<br>
-      <a href="[https://miweb.com](https://we-park.es/)" style="color: blue;">Visita mi sitio</a>
+      <a href="https://we-park.es/" style="color: blue;">Visita mi sitio</a>
     </td>
   </tr>
 </table>
